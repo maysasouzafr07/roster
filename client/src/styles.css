@@ -1,0 +1,47 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#e9edf5;--card:#fff;--ink:#14213d;--mut:#5d6b86;--ac:#f5a524;--acink:#14213d;--line:#cfd7e6;--err:#b3261e;--navy:#14213d;--navyink:#fff}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0c1426;--card:#16213a;--ink:#eef2fb;--mut:#9fb0d0;--line:#2a3a5c;--err:#ff8a80;--navy:#f5a524;--navyink:#14213d}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0c1426;--card:#16213a;--ink:#eef2fb;--mut:#9fb0d0;--line:#2a3a5c;--err:#ff8a80;--navy:#f5a524;--navyink:#14213d}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font:16px/1.45 "Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif}
+.app{max-width:440px;margin:0 auto;padding:20px 18px 40px;min-height:100vh}
+.brand{font-size:34px;font-weight:700;letter-spacing:-.03em;margin:8px 0 22px;display:flex;align-items:center;gap:10px}
+.brand i{display:inline-grid;grid-template-columns:repeat(3,10px);gap:3px}
+.brand i b{width:10px;height:10px;background:var(--ac);border-radius:2px}
+.brand i b:nth-child(2n){background:var(--navy)}
+h2{font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
+p.sub{color:var(--mut);margin:0 0 18px}
+label{display:block;font-weight:500;margin:14px 0 6px}
+input{width:100%;padding:13px 14px;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px}
+input:focus,button:focus-visible{outline:3px solid var(--ac);outline-offset:1px}
+.btn{display:block;width:100%;margin-top:14px;padding:14px;font:inherit;font-weight:700;border-radius:10px;border:1.5px solid var(--navy);background:var(--navy);color:var(--navyink);cursor:pointer}
+.btn.ac{background:var(--ac);border-color:var(--ac);color:var(--acink)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.ou{text-align:center;color:var(--mut);margin:14px 0 0}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px;margin-top:12px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{display:inline-flex;gap:8px;align-items:center;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:6px 8px 6px 14px}
+.chip button{border:0;background:var(--line);color:var(--ink);width:22px;height:22px;border-radius:50%;cursor:pointer;font-weight:700}
+.add{display:flex;gap:8px}.add .btn{width:auto;margin:0;padding:0 18px}
+.err{background:color-mix(in srgb,var(--err) 12%,var(--card));border:1.5px solid var(--err);border-radius:12px;padding:18px;margin:10px 0}
+.err h2{color:var(--err)}
+.stepper{display:flex;align-items:center;gap:14px;margin-top:6px}
+.stepper button{width:44px;height:44px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:22px;cursor:pointer}
+.stepper b{font-size:24px;min-width:28px;text-align:center}
+.scroll{overflow-x:auto;border:1.5px solid var(--line);border-radius:12px;background:var(--card);margin-top:14px}
+table{border-collapse:collapse;width:100%;min-width:100%}
+th,td{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;font-size:14px}
+th{background:var(--navy);color:var(--navyink);font-weight:700}
+td.t{font-weight:700;background:color-mix(in srgb,var(--ac) 18%,var(--card));white-space:nowrap}
+td span{display:block}
+.foot{text-align:center;color:var(--mut);font-size:13px;margin-top:36px}
+.modal{position:fixed;inset:0;background:rgba(10,16,30,.7);display:grid;place-items:center;padding:18px;z-index:5}
+.modal>div{background:var(--card);border-radius:14px;padding:16px;max-width:520px;width:100%;max-height:90vh;overflow:auto}
+.modal img{width:100%;border:1px solid var(--line);border-radius:8px}
+.ok{color:var(--mut);font-size:14px}
+.tg{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 14px;font:inherit;cursor:pointer}
+.tg[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:var(--navyink);text-decoration:line-through}
+.tg.sel[aria-pressed=true]{text-decoration:none}

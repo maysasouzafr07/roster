@@ -1,0 +1,55 @@
+erDiagram
+    usuario ||--o{ escala : cria
+    escala ||--o{ topico : possui
+    escala ||--o{ participante : inclui
+    escala ||--o{ data_escala : agenda
+    topico ||--o{ designacao : recebe
+    data_escala ||--o{ designacao : "ocorre em"
+    participante ||--o{ designacao : "e escalado em"
+    participante ||--o{ indisponibilidade : informa
+    data_escala ||--o{ indisponibilidade : bloqueia
+
+    usuario {
+        int id_usuario PK
+        varchar nome
+        varchar email UK
+        varchar senha_hash
+        timestamp data_cadastro
+    }
+    escala {
+        int id_escala PK
+        int id_usuario FK
+        varchar titulo
+        timestamp data_criacao
+        boolean salva
+        boolean enviada_email
+    }
+    topico {
+        int id_topico PK
+        int id_escala FK
+        varchar descricao
+        int quantidade
+        boolean para_todos
+        int ordem
+    }
+    participante {
+        int id_participante PK
+        int id_escala FK
+        varchar nome
+    }
+    data_escala {
+        int id_data PK
+        int id_escala FK
+        date data_evento
+    }
+    designacao {
+        int id_designacao PK
+        int id_topico FK
+        int id_data FK
+        int id_participante FK
+    }
+    indisponibilidade {
+        int id_indisponibilidade PK
+        int id_participante FK
+        int id_data FK
+    }
